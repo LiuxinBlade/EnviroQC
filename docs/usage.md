@@ -2,12 +2,19 @@
 
 ## Install
 
-Python 3.11+ is required.
+Python 3.11+ is required. EnviroQC is distributed through GitHub, not PyPI.
 
 ```bash
-pip install enviroqc                 # from PyPI, once released
-pip install "enviroqc[pandas]"       # adds pandas for validate_dataframe()
-pip install .                        # from a source checkout
+# From a clone (includes examples/)
+git clone https://github.com/LiuxinBlade/EnviroQC.git && cd EnviroQC
+pip install .                        # or: pip install ".[pandas]" for validate_dataframe()
+
+# A specific release, without cloning
+pip install "git+https://github.com/LiuxinBlade/EnviroQC.git@v0.1.0"
+pip install "enviroqc[pandas] @ git+https://github.com/LiuxinBlade/EnviroQC.git@v0.1.0"
+
+# Or a wheel downloaded from https://github.com/LiuxinBlade/EnviroQC/releases
+pip install enviroqc-0.1.0-py3-none-any.whl
 ```
 
 Runtime dependencies are only `openpyxl` (Excel) and `PyYAML` (rules). pandas is optional.
@@ -17,7 +24,7 @@ Using a virtual environment is recommended:
 ```bash
 python -m venv .venv
 . .venv/bin/activate                 # Windows: .venv\Scripts\activate
-pip install enviroqc
+pip install "git+https://github.com/LiuxinBlade/EnviroQC.git@v0.1.0"
 ```
 
 ## Commands

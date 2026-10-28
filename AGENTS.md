@@ -85,6 +85,7 @@ names in `enviroqc.__all__`.
 ## Release
 
 See `docs/release.md`. Version lives in `pyproject.toml` and `src/enviroqc/__init__.py` (keep
-equal; the release workflow checks the tag). Publishing uses PyPI Trusted Publishing — no tokens.
+equal; the release workflow checks the tag). Releases are published on GitHub only (the
+maintainer chose not to use PyPI); the workflow attaches the wheel and sdist to the Release.
 Releases, public repository changes and anything irreversible need the maintainer's explicit
 approval.

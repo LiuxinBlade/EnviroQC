@@ -12,11 +12,11 @@ _Last updated: 2026-10-28_
 - **Description:** An open-source data quality toolkit for environmental monitoring datasets.
 - **License:** MIT
 - **Repository:** https://github.com/LiuxinBlade/EnviroQC (created 2026-10-28)
-- **Package:** `enviroqc` (name available on PyPI as of 2026-10-28; _not yet published_)
+- **Distribution:** GitHub Releases (wheel + sdist); not published on PyPI by the maintainer's choice.
 
 ## 2. Functionality — status
 
-### Done (version 0.1.0, local, verified by the test suite)
+### Done (released as v0.1.0 on 2026-10-28)
 
 - CSV/TSV/TXT and XLSX/XLSM reading, read-only, with exact source row numbers.
 - YAML rules with strict validation and located error messages.
@@ -33,12 +33,12 @@ _Last updated: 2026-10-28_
 - Synthetic example data (CSV + XLSX) and rules.
 - Chinese (default) and English README; usage, configuration, schema, API, troubleshooting, development
   and release documentation; CONTRIBUTING, SECURITY, CHANGELOG, issue/PR templates.
-- GitHub Actions CI running on every push and pull request (passing); release workflow
-  written but not yet used.
+- GitHub Actions CI running on every push and pull request (passing); tag-triggered release
+  workflow that builds and attaches packages to a GitHub Release.
 
 ### In progress
 
-- First release (v0.1.0) on PyPI via Trusted Publishing.
+- Nothing in progress at the moment.
 
 ### Planned (not started)
 
@@ -56,19 +56,20 @@ _Last updated: 2026-10-28_
 | Coverage (`pytest --cov=enviroqc`) | 97% | 2026-10-28 | run locally |
 | Ruff lint + format check | clean | 2026-10-28 | run locally |
 | sdist + wheel build, install in clean venv, README commands | passed | 2026-10-28 | run locally |
+| Install from the v0.1.0 Release wheel and from `git+…@v0.1.0` in clean venvs, run examples | passed | 2026-10-28 | run locally |
 | GitHub Actions CI (lint; tests on Ubuntu py3.11–3.13, Windows, macOS; build + wheel smoke test) | all 7 jobs passed | 2026-10-28 | https://github.com/LiuxinBlade/EnviroQC/actions/runs/40626359918 |
 
 ## 4. Releases
 
 | Version | Date | Where |
 |---|---|---|
-| — | — | No public release yet. |
+| v0.1.0 | 2026-10-28 | https://github.com/LiuxinBlade/EnviroQC/releases/tag/v0.1.0 |
 
 ## 5. Community activity
 
 As of 2026-10-28 the project has **no** public issues, pull requests, external contributors,
-stars, downloads or user feedback, because it has not been published yet. This section will
-only list items with links.
+stars or user feedback; it was published the same day. This section will only list items with
+links.
 
 ## 6. Maintainer responsibilities
 

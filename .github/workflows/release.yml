@@ -1,3 +1,5 @@
+# Publishes a GitHub Release (wheel + sdist attached) when a vX.Y.Z tag is pushed.
+# EnviroQC is distributed through GitHub only; see docs/release.md.
 name: Release
 
 on:
@@ -29,23 +31,8 @@ jobs:
           name: dist
           path: dist/
 
-  publish-pypi:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: pypi
-      url: https://pypi.org/project/enviroqc/
-    permissions:
-      id-token: write   # PyPI Trusted Publishing; no API token is stored anywhere
-    steps:
-      - uses: actions/download-artifact@v8
-        with:
-          name: dist
-          path: dist/
-      - uses: pypa/gh-action-pypi-publish@release/v1
-
   github-release:
-    needs: publish-pypi
+    needs: build
     runs-on: ubuntu-latest
     permissions:
       contents: write

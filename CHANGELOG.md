@@ -6,6 +6,11 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+### Changed
+
+- Distribution is through GitHub Releases only; the release workflow no longer publishes to PyPI.
+  Install instructions now use the repository or the release wheel.
+
 ## [0.1.0] - 2026-10-28
 
 First public version (alpha).

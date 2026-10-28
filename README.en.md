@@ -28,19 +28,27 @@ recorded in the [changelog](CHANGELOG.md).
 
 ## Installation
 
-Requires Python 3.11 or newer.
+Requires Python 3.11 or newer. EnviroQC is distributed through GitHub (it is not on PyPI).
+
+**Option 1: clone the repository (recommended; includes the example data)**
 
 ```bash
-pip install enviroqc
+git clone https://github.com/LiuxinBlade/EnviroQC.git
+cd EnviroQC
+python -m venv .venv
+. .venv/bin/activate          # Windows: .venv\Scripts\activate
+pip install .
 ```
 
-> Until the first release is published on PyPI, install from a clone of this repository:
->
-> ```bash
-> git clone https://github.com/LiuxinBlade/EnviroQC.git
-> cd EnviroQC
-> pip install .
-> ```
+**Option 2: install a released version directly**
+
+```bash
+pip install "git+https://github.com/LiuxinBlade/EnviroQC.git@v0.1.0"
+```
+
+Or download the `.whl` from the [Releases](https://github.com/LiuxinBlade/EnviroQC/releases)
+page and run `pip install enviroqc-0.1.0-py3-none-any.whl`. For `validate_dataframe()` also
+install pandas: `pip install pandas`.
 
 ## Quick start
 

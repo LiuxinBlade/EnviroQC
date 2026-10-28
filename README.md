@@ -24,19 +24,27 @@ JSON（供程序使用）和 HTML（供人阅读）。
 
 ## 安装
 
-需要 Python 3.11 及以上版本。
+需要 Python 3.11 及以上版本。EnviroQC 通过 GitHub 发布，不在 PyPI 上。
+
+**方式一：克隆仓库（推荐，自带示例数据）**
 
 ```bash
-pip install enviroqc
+git clone https://github.com/LiuxinBlade/EnviroQC.git
+cd EnviroQC
+python -m venv .venv
+. .venv/bin/activate          # Windows：.venv\Scripts\activate
+pip install .
 ```
 
-> 在首个版本发布到 PyPI 之前，请从仓库源码安装：
->
-> ```bash
-> git clone https://github.com/LiuxinBlade/EnviroQC.git
-> cd EnviroQC
-> pip install .
-> ```
+**方式二：直接安装某个发布版本**
+
+```bash
+pip install "git+https://github.com/LiuxinBlade/EnviroQC.git@v0.1.0"
+```
+
+也可以在 [Releases](https://github.com/LiuxinBlade/EnviroQC/releases) 页面下载 `.whl` 文件，然后
+`pip install enviroqc-0.1.0-py3-none-any.whl`。需要 `validate_dataframe()` 时另外安装 pandas：
+`pip install pandas`。
 
 ## 快速开始
 
