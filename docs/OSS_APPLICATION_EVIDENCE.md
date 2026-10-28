@@ -33,11 +33,11 @@ _Last updated: 2026-10-28_
 - Synthetic example data (CSV + XLSX) and rules.
 - Chinese (default) and English README; usage, configuration, schema, API, troubleshooting, development
   and release documentation; CONTRIBUTING, SECURITY, CHANGELOG, issue/PR templates.
-- GitHub Actions workflows for CI and release (written; not yet run on GitHub).
+- GitHub Actions CI running on every push and pull request (passing); release workflow
+  written but not yet used.
 
 ### In progress
 
-- Publishing the repository on GitHub and running CI there.
 - First release (v0.1.0) on PyPI via Trusted Publishing.
 
 ### Planned (not started)
@@ -56,7 +56,7 @@ _Last updated: 2026-10-28_
 | Coverage (`pytest --cov=enviroqc`) | 97% | 2026-10-28 | run locally |
 | Ruff lint + format check | clean | 2026-10-28 | run locally |
 | sdist + wheel build, install in clean venv, README commands | passed | 2026-10-28 | run locally |
-| GitHub Actions | _not yet run_ | — | link to be added |
+| GitHub Actions CI (lint; tests on Ubuntu py3.11–3.13, Windows, macOS; build + wheel smoke test) | all 7 jobs passed | 2026-10-28 | https://github.com/LiuxinBlade/EnviroQC/actions/runs/40626359918 |
 
 ## 4. Releases
 
