@@ -1,0 +1,88 @@
+# EnviroQC example rules: hourly air-quality monitoring data.
+#
+# IMPORTANT: every threshold below is an illustrative plausibility bound chosen
+# for this synthetic example. None of them is a legal or regulatory limit.
+# Adapt them to your instruments, site and applicable standards.
+
+version: 1
+name: Hourly air quality (example)
+description: Screening rules for the synthetic dataset in examples/air_quality_sample.csv
+
+input:
+  encoding: utf-8-sig        # utf-8 with or without BOM; use gbk/gb18030 for many Chinese exports
+  delimiter: ","
+  header_row: 1              # row/line number of the header (1 = first line)
+  # sheet: Sheet1            # Excel only; default is the first worksheet
+  missing_values: ["", "NA", "N/A", "null", "-999"]
+
+unexpected_columns: warning  # ignore | info | warning | error
+
+columns:
+  - name: station_id
+    type: string
+    pattern: "^ST\\d{3}$"
+    description: Station code, e.g. ST001
+
+  - name: timestamp
+    type: datetime
+    format: "%Y-%m-%d %H:%M"
+
+  - name: pm25
+    type: float
+    unit: µg/m³
+    ranges:
+      - name: pm25.non_negative
+        min: 0
+        severity: error
+        note: 浓度不能为负 / concentrations cannot be negative
+      - name: pm25.plausible_upper
+        max: 500
+        severity: warning
+        note: 示例经验范围，非法规限值 / example plausibility bound, not a regulatory limit
+
+  - name: pm10
+    type: float
+    unit: µg/m³
+    nullable: true           # gaps allowed; still counted in the column summary
+    range:
+      min: 0
+      max: 1000
+      severity: warning
+
+  - name: no2
+    type: float
+    unit: µg/m³
+    range:
+      min: 0
+      max: 400
+      severity: warning
+
+  - name: temperature_c
+    type: float
+    unit: °C
+    range:
+      min: -50
+      max: 50
+      severity: warning
+
+  - name: relative_humidity
+    type: float
+    unit: "%"
+    range:
+      min: 0
+      max: 100
+      severity: error
+      note: 相对湿度为百分比 / relative humidity is a percentage
+
+  - name: qc_flag
+    type: string
+    allowed: [V, S, M]       # valid, suspect, maintenance (example coding)
+    nullable: true
+
+duplicates:
+  - name: duplicate_station_time
+    columns: [station_id, timestamp]
+    severity: error
+  - name: exact_duplicate_row
+    columns: "*"
+    severity: warning

@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+
+# Tools
+.pytest_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Generated reports
+report*.html
+report*.json
+reports/
+
+# Secrets and local settings - never commit
+.env
+.env.*
+*.pem
+*.key
+.pypirc
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

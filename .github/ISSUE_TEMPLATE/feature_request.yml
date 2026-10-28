@@ -1,0 +1,22 @@
+name: Feature request
+description: Suggest a new check, rule option or improvement
+labels: [enhancement]
+body:
+  - type: textarea
+    id: scenario
+    attributes:
+      label: Monitoring scenario
+      description: What data do you check and what problem are you trying to catch?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behaviour
+      description: Example rules YAML and the issues you would expect in the report.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
