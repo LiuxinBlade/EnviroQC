@@ -6,20 +6,6 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
-### Added
-
-- Bilingual output: Chinese (default) and English for the terminal summary, error messages and
-  hints, `--help`, and the text in JSON/HTML reports. Select with `--lang zh|en`, the
-  `ENVIROQC_LANG` environment variable, `enviroqc.set_language()`, or `lang=` on
-  `validate_file`, `validate_dataframe`, `validate_table`, `Report.to_json/to_html/to_dict`.
-- JSON report: top-level `language` and per-issue `message_id` (language-independent).
-- `README.md` is now Chinese; the English README is `README.en.md`.
-
-### Changed
-
-- **Default output language is Chinese.** Scripts that parse terminal text should use
-  `--lang en` or, better, the JSON report.
-
 ## [0.1.0] - 2026-10-28
 
 First public version (alpha).
@@ -38,6 +24,15 @@ First public version (alpha).
 - Python API: `validate_file`, `validate_dataframe`, `validate_table`, `load_rules`,
   `write_report`, stable exception hierarchy.
 - Report writing refuses to overwrite the input data or rules file.
+- Bilingual output: Chinese (default) and English for the terminal summary, error messages and
+  hints, `--help`, and the text in JSON/HTML reports. Select with `--lang zh|en`, the
+  `ENVIROQC_LANG` environment variable, `enviroqc.set_language()`, or `lang=` on the validate
+  functions and `Report.to_json/to_html/to_dict`. JSON reports carry `language` and a
+  language-independent `message_id` per issue.
 - Synthetic air-quality example (CSV + XLSX) and generator script.
-- Documentation in English and Chinese; GitHub Actions CI and release workflow
+- Documentation: Chinese `README.md` (default), English `README.en.md` and English `docs/`.
+- GitHub Actions CI and release workflow
   (PyPI Trusted Publishing).
+
+[Unreleased]: https://github.com/LiuxinBlade/EnviroQC/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/LiuxinBlade/EnviroQC/releases/tag/v0.1.0
